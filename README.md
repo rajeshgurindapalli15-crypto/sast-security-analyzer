@@ -1,1 +1,20 @@
-# SAST Security Analyzer`n`nA modular, terminal-based Static Application Security Testing (SAST) tool built in Python to scan codebases for security vulnerabilities.`n`n## Features`n- **Regex Rule Engine**: Scans code for Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization.`n- **Rich Terminal UI**: Styled CLI table outputs built with `click` and `rich`.`n- **Automated Reporting**: Generates Markdown security reports under `reports/`.`n- **Unit Tested**: Automated test suite powered by `pytest`.`n- **Containerized**: Production-ready `Dockerfile` for isolated scanning environments.`n`n## Installation & Setup`n```bash`ngit clone [https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git](https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git)`ncd sast-security-analyzer`npython -m venv venv`nvenv\Scripts\activate`npip install -r requirements.txt`n````n`n## Usage`n```bash`npython -m scanner.cli --target tests/sample_vulnerable.py`n````n`n## Sample Output`n`n### Terminal CLI Result`n```text`n?? Starting SAST Scan on: tests\sample_vulnerable.py`n`n                     SAST Vulnerability Scan Results                    `n+-----------------------------------------------------------------------+`n¦ Rule ID  ¦ Severity ¦ Vulnerability                 ¦ File:Line       ¦`n+----------+----------+-------------------------------+-----------------¦`n¦ SEC-001  ¦ HIGH     ¦ Hardcoded Secret / API Key    ¦ tests\sample... ¦`n¦ SEC-002  ¦ CRITICAL ¦ Command Injection Risk        ¦ tests\sample... ¦`n¦ SEC-004  ¦ CRITICAL ¦ Insecure Deserialization      ¦ tests\sample... ¦`n+-----------------------------------------------------------------------+`n`n?? Report generated successfully at: reports/scan_report.md`n````n`n### Generated Security Report (`reports/scan_report.md`)`n```markdown`n# SAST Scan Security Report`n`n- **Target File**: `tests\sample_vulnerable.py``n- **Total Vulnerabilities Found**: 3`n`n| Rule ID | Severity | Description | Line |`n| :--- | :--- | :--- | :--- |`n| SEC-001 | HIGH | Hardcoded Secret / API Key | 1 |`n| SEC-002 | CRITICAL | Command Injection Risk | 5 |`n| SEC-004 | CRITICAL | Insecure Deserialization | 9 |`n````n`n## Running Tests`n```bash`npython -m pytest`n```
+# SAST Security Analyzer
+
+A modular, terminal-based Static Application Security Testing (SAST) tool built in Python to scan codebases for security vulnerabilities.
+
+## Features
+
+- **Regex Rule Engine**: Scans code for Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization.
+- **Terminal UI**: Styled CLI table outputs built with `click` and `rich`.
+- **Automated Reporting**: Generates Markdown security reports under `reports/`.
+- **Tested**: Automated test suite powered by `pytest`.
+- **Containerized**: Production-ready `Dockerfile` for isolated scanning environments.
+
+## Installation & Setup
+
+```bash
+git clone [https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git](https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git)
+cd sast-security-analyzer
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
