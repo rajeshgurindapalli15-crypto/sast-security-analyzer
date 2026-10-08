@@ -18,3 +18,9 @@ cd sast-security-analyzer
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+
+## Interactive CLI Diagnostic Output
+
+To execute a static code analysis and render intercepted vulnerability vectors in real time, the scanning utility is invoked via the terminal. Below is the active CLI execution and structured table representation rendered via `rich`:
+
+![Terminal UI - SAST Vulnerability Scan Results](cli_scan_output.png)
