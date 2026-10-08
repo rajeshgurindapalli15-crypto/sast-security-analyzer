@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 To execute a static code analysis and render intercepted vulnerability vectors in real time, the scanning utility is invoked via the terminal. Below is the active CLI execution and structured table representation rendered via `rich`:
 
-![Terminal UI - SAST Vulnerability Scan Results](Rich CLI Table Interface.png)
+![Terminal UI - SAST Vulnerability Scan Results](rich_cli_table_interface.png)
 
 
 
