@@ -19,7 +19,7 @@ python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 ```
-## Interactive CLI Diagnostic Output
+## Diagnostic CLI Execution & Data Presentation
 
 To execute a static code analysis and render intercepted vulnerability vectors in real time, the scanning utility is invoked via the terminal. Below is the active CLI execution and structured table representation rendered via `rich`:
 
