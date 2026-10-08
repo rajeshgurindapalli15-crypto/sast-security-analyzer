@@ -37,5 +37,10 @@ To maintain code reliability and validate matching criteria across regex rule se
 
 ![Pytest Execution Verification - test_engine.py](pytest_validation.png)
 
+## Historical Scan Logging & Audit Trail
+
+To maintain a chronological history of security assessments, the analyzer logs each scan event with exact timestamps, targeted files, triggered rule IDs, and specific vulnerability line numbers. Below is a structured view of the audit trail captured during test runs:
+
+![Historical Scan Audit Trail](sast_scan_history.png)
 
 
