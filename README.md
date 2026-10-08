@@ -25,6 +25,12 @@ To execute a static code analysis and render intercepted vulnerability vectors i
 
 ![Terminal UI - SAST Vulnerability Scan Results](cil_output.png)
 
+## Automated Compliance Report Artifact
+
+Upon completing the analysis, the engine automatically compiles and exports a standardized security audit document. Below is the raw content structure of the generated report stored within the `reports/` directory:
+
+![Markdown Report Structure - scan_report.md](compliance_report.png)
+
 
 
 
