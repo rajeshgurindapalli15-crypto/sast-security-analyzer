@@ -13,7 +13,6 @@ A modular, terminal-based Static Application Security Testing (SAST) tool built 
 ## Installation & Setup
 
 ```bash
-```bash
 git clone https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git
 cd sast-security-analyzer
 python -m venv venv
