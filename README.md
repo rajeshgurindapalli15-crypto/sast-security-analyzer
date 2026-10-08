@@ -31,7 +31,11 @@ Upon completing the analysis, the engine automatically compiles and exports a st
 
 ![Markdown Report Structure - scan_report.md](compliance_report.png)
 
+## Test Harness Execution & Engine Verification
 
+To maintain code reliability and validate matching criteria across regex rule sets, an automated test suite is integrated. Below is the console output confirming successful test execution via `pytest`:
+
+![Pytest Execution Verification - test_engine.py](pytest_validation.png)
 
 
 
