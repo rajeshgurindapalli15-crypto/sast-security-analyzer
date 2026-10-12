@@ -1,5 +1,7 @@
 import sqlite3
+import os
 from datetime import datetime
+from pymongo import MongoClient
 
 DB_NAME = "sast_results.db"
 
@@ -21,8 +23,29 @@ def init_db():
     conn.commit()
     conn.close()
 
+def sync_to_cloud_mongodb(timestamp, target_file, vulnerabilities):
+    """Synchronizes scan telemetry to MongoDB Atlas if MONGO_ATLAS_URI is configured."""
+    mongo_uri = os.getenv("MONGO_ATLAS_URI")
+    if not mongo_uri:
+        return  # Gracefully skip cloud sync if offline or unconfigured
+    
+    try:
+        client = MongoClient(mongo_uri, serverSelectionTimeoutMS=3000)
+        db = client["sast_cloud_telemetry"]
+        collection = db["vulnerability_audits"]
+        
+        document = {
+            "scan_timestamp": timestamp,
+            "target_file": target_file,
+            "total_vulnerabilities": len(vulnerabilities),
+            "findings": vulnerabilities
+        }
+        collection.insert_one(document)
+    except Exception as e:
+        print(f"[-] Warning: Failed to sync telemetry to MongoDB Atlas: {e}")
+
 def save_vulnerabilities_to_db(target_file, vulnerabilities):
-    """Inserts a list of vulnerability dictionaries into the database."""
+    """Inserts a list of vulnerability dictionaries into local SQLite and syncs to MongoDB Atlas."""
     init_db()
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
@@ -44,6 +67,8 @@ def save_vulnerabilities_to_db(target_file, vulnerabilities):
         
     conn.commit()
     conn.close()
+
+    sync_to_cloud_mongodb(timestamp, target_file, vulnerabilities)
 
 def get_scan_history():
     """Retrieves all past scan results from the database."""
