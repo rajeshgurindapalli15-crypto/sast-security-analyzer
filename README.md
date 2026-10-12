@@ -10,7 +10,7 @@ A modular, terminal-based **Static Application Security Testing (SAST)** engine 
 ---
 
 ## 🏗️ Architecture & Data-Flow Mind Map
-
+The pipeline executes a local static code scan to parse vulnerability vectors through custom regex rules. Detected findings are simultaneously committed to a local SQLite database for instant developer feedback and asynchronously synchronized to MongoDB Atlas for centralized cloud threat telemetry.
 ```mermaid
 graph TD
     A[Developer Local Workspace] -->|Runs CLI Scan| B(SAST Security Engine)
