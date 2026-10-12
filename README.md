@@ -86,3 +86,7 @@ Stores structured scan results locally with timestamps, rule IDs, and vulnerabil
 Automatically streams append-only audit logs and comprehensive finding arrays to a centralized cloud cluster. Provides immutable, chronological telemetry tracking across multiple scan executions for enterprise observability.
 
 ![MongoDB Telemetry](assets/mongodb_audit_telemetry.png)
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
