@@ -40,6 +40,7 @@ def sync_to_cloud_mongodb(timestamp, target_file, vulnerabilities):
             "total_vulnerabilities": len(vulnerabilities),
             "findings": vulnerabilities
         }
+        # Appends a brand-new document on every scan execution
         collection.insert_one(document)
     except Exception as e:
         print(f"[-] Warning: Failed to sync telemetry to MongoDB Atlas: {e}")
