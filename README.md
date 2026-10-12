@@ -29,15 +29,15 @@ graph TD
     style F fill:#0366d6,stroke:#fff,stroke-width:2px,color:#fff
     style G fill:#2ea44f,stroke:#fff,stroke-width:2px,color:#fff
 ```
-## 🔑Core Technical Features
+## 🔑 Core Technical Features
 
-* **Regex Pattern Matching Engine**: Scans source code repositories for high-severity vulnerability vectors, including Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization.
-* **Dual-Storage Telemetry Persistence**: 
-  * *Local Edge Layer (SQLite3):* Fast, zero-configuration local caching for immediate developer feedback and offline audit logging.
-  * *Cloud Telemetry Layer (MongoDB Atlas):* Asynchronous threat synchronization for centralized historical analysis.
-* **Terminal UI Dashboard**: Styled CLI table outputs built using `click` and `rich`.
-* **Automated Compliance Reporting**: Generates standardized Markdown security audits under `reports/`.
-* **Rigorously Tested**: End-to-end test suites powered by `pytest`.
+| Feature | Technical Implementation | Value & Capabilities |
+| :--- | :--- | :--- |
+| **Regex Pattern Matching Engine** | Custom Python Engine | Scans source repositories for Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization. |
+| **Dual-Storage Telemetry** | `SQLite3` & MongoDB Atlas | Stores local scan logs in `SQLite3` for fast developer feedback while syncing threats asynchronously to MongoDB. |
+| **Terminal UI Dashboard** | `click` & `rich` | Renders styled CLI table views, status indicators, and interactive scan progress. |
+| **Automated Compliance** | Markdown Generator | Automatically exports structured compliance audit logs and scan reports under `reports/`. |
+| **Automated Test Suite** | `pytest` | Validates vulnerability detection rules and database persistence workflows. |
 
 ---
 
