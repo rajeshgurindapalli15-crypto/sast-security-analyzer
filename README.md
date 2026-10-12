@@ -1,22 +1,35 @@
-# SAST Security Analyzer
+# SAST Security Analyzer: Edge-Optimized Static Code Assessment Engine
 
-A modular, terminal-based Static Application Security Testing (SAST) tool built in Python to scan codebases for security vulnerabilities.
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Storage](https://img.shields.io/badge/storage-SQLite3%20%7C%20MongoDB%20Atlas-green.svg)](https://www.mongodb.com/)
+[![Testing](https://img.shields.io/badge/testing-pytest-orange.svg)](https://docs.pytest.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+A modular, terminal-based **Static Application Security Testing (SAST)** engine engineered in Python. Designed as the **Phase 1 Code-Level Detection Engine** of an end-to-end DevSecOps framework, it performs regex-based vulnerability pattern matching, maintains local edge audit trails, and synchronizes global security telemetry to cloud storage.
 
-- **Regex Rule Engine**: Scans code for Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization.
-- **Terminal UI**: Styled CLI table outputs built with `click` and `rich`.
-- **Automated Reporting**: Generates Markdown security reports under `reports/`.
-- **Tested**: Automated test suite powered by `pytest`.
-- **Containerized**: Production-ready `Dockerfile` for isolated scanning environments.
+---
+
+## 🏗️ Architectural Role in the Secure SDLC
+
+## Core Technical Features
+
+* **Regex Pattern Matching Engine**: Scans source code repositories for high-severity vulnerability vectors, including Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization.
+* **Dual-Storage Telemetry Persistence**: 
+  * *Local Edge Layer (SQLite3):* Fast, zero-configuration local caching for immediate developer feedback and offline audit logging.
+  * *Cloud Telemetry Layer (MongoDB Atlas):* Asynchronous threat synchronization for centralized historical analysis.
+* **Terminal UI Dashboard**: Styled CLI table outputs built using `click` and `rich`.
+* **Automated Compliance Reporting**: Generates standardized Markdown security audits under `reports/`.
+* **Rigorously Tested**: End-to-end test suites powered by `pytest`.
+
+---
 
 ## Installation & Setup
 
 ```bash
-git clone https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git
+git clone [https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git](https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git)
 cd sast-security-analyzer
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate  # On Unix/macOS: source venv/bin/activate
 pip install -r requirements.txt
 ```
 ## Diagnostic CLI Execution & Data Presentation
