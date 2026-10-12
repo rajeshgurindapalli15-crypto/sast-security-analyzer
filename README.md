@@ -77,12 +77,12 @@ To maintain a chronological history of security assessments, the analyzer logs e
 
 ![Historical Scan Audit Trail](assets/sast_scan_history.png)
 
-## 💾Local Persistence (SQLite)
+### 💾Local Persistence (SQLite)
 Stores structured scan results locally with timestamps, rule IDs, and vulnerability severity levels. Enables fast, offline retrieval of historical scan data directly from the `sast_results.db` relational database.
 
 ![SQLite Results](assets/sqlite_scan_results.png)
 
-## ☁️Cloud Audit Telemetry (MongoDB Atlas)
+### ☁️Cloud Audit Telemetry (MongoDB Atlas)
 Automatically streams append-only audit logs and comprehensive finding arrays to a centralized cloud cluster. Provides immutable, chronological telemetry tracking across multiple scan executions for enterprise observability.
 
 ![MongoDB Telemetry](assets/mongodb_audit_telemetry.png)
