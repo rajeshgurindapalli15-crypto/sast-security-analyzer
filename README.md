@@ -47,7 +47,7 @@ graph TD
 git clone [https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git](https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git)
 cd sast-security-analyzer
 python -m venv venv
-venv\Scripts\activate  # On Unix/macOS: source venv/bin/activate
+venv\Scripts\activate  
 pip install -r requirements.txt
 ```
 ## Diagnostic CLI Execution & Data Presentation
