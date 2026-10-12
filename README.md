@@ -9,15 +9,25 @@ A modular, terminal-based **Static Application Security Testing (SAST)** engine 
 
 ---
 
-## 🏗️ Architectural Role in the Secure SDLC
+## 🏗️ Architecture & Data-Flow Mind Map
 
-This project operates as **Phase 1 (Code-Level Detection)** in a three-tier DevSecOps framework:
+```mermaid
+graph TD
+    A[Developer Local Workspace] -->|Runs CLI Scan| B(SAST Security Engine)
+    B -->|Regex Pattern Matching| C{Vulnerability Found?}
+    
+    C -->|Yes| D[Extract Severity, Line & Snippet]
+    C -->|No| E[Clean Scan Log]
+    
+    D --> F[(Local SQLite3 DB)]
+    D --> G[(MongoDB Atlas Cloud)]
+    
+    F --> H[Terminal Rich UI & Markdown Reports]
+    G --> I[Global Threat Telemetry & Audits]
 
-| SDLC Phase | Component | Storage & Action |
-| :--- | :--- | :--- |
-| **Phase 1 (Edge)** | **SAST Security Analyzer** | Scans local code, logs findings locally via **SQLite3**, and syncs telemetry to **MongoDB Atlas**. |
-| **Phase 2 (CI/CD)** | Compliance Pipeline | Enforces automated policy gates prior to build approval. |
-| **Phase 3 (Runtime)** | SOAR Pipeline | Manages live threat ingestion and automated incident response. |SDLC
+    style B fill:#2b3137,stroke:#fff,stroke-width:2px,color:#fff
+    style F fill:#0366d6,stroke:#fff,stroke-width:2px,color:#fff
+    style G fill:#2ea44f,stroke:#fff,stroke-width:2px,color:#fff
 
 ## Core Technical Features
 
