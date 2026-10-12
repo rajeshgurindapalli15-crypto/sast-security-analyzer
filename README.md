@@ -41,7 +41,7 @@ graph TD
 
 ---
 
-## Installation & Setup
+## ⚙️Installation & Setup
 
 ```bash
 git clone [https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git](https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git)
@@ -50,36 +50,36 @@ python -m venv venv
 venv\Scripts\activate  
 pip install -r requirements.txt
 ```
-## Diagnostic CLI Execution & Data Presentation
+## 💻Diagnostic CLI Execution & Data Presentation
 
 To execute a static code analysis and render intercepted vulnerability vectors in real time, the scanning utility is invoked via the terminal. Below is the active CLI execution and structured table representation rendered via `rich`:
 
 ![Terminal UI - SAST Vulnerability Scan Results](assets/cil_output.png)
 
-## Automated Compliance Report Artifact
+## 📄Automated Compliance Report Artifact
 
 Upon completing the analysis, the engine automatically compiles and exports a standardized security audit document. Below is the raw content structure of the generated report stored within the `reports/` directory:
 
 ![Markdown Report Structure - scan_report.md](assets/compliance_report.png)
 
-## Test Harness Execution & Engine Verification
+## 🧪Test Harness Execution & Engine Verification
 
 To maintain code reliability and validate matching criteria across regex rule sets, an automated test suite is integrated. Below is the console output confirming successful test execution via `pytest`:
 
 ![Pytest Execution Verification - test_engine.py](assets/pytest_validation.png)
 
-## Historical Scan Logging & Audit Trail
+## 📊Historical Scan Logging & Audit Trail
 
 To maintain a chronological history of security assessments, the analyzer logs each scan event with exact timestamps, targeted files, triggered rule IDs, and specific vulnerability line numbers. Below is a structured view of the audit trail captured during test runs:
 
 ![Historical Scan Audit Trail](assets/sast_scan_history.png)
 
-## Local Persistence (SQLite)
+## 💾Local Persistence (SQLite)
 Stores structured scan results locally with timestamps, rule IDs, and vulnerability severity levels. Enables fast, offline retrieval of historical scan data directly from the `sast_results.db` relational database.
 
 ![SQLite Results](assets/sqlite_scan_results.png)
 
-## Cloud Audit Telemetry (MongoDB Atlas)
+## ☁️Cloud Audit Telemetry (MongoDB Atlas)
 Automatically streams append-only audit logs and comprehensive finding arrays to a centralized cloud cluster. Provides immutable, chronological telemetry tracking across multiple scan executions for enterprise observability.
 
 ![MongoDB Telemetry](assets/mongodb_audit_telemetry.png)
