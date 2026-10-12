@@ -29,7 +29,7 @@ graph TD
     style F fill:#0366d6,stroke:#fff,stroke-width:2px,color:#fff
     style G fill:#2ea44f,stroke:#fff,stroke-width:2px,color:#fff
 ```
-## Core Technical Features
+## 🔑Core Technical Features
 
 * **Regex Pattern Matching Engine**: Scans source code repositories for high-severity vulnerability vectors, including Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization.
 * **Dual-Storage Telemetry Persistence**: 
