@@ -4,6 +4,7 @@
 ![Storage](https://img.shields.io/badge/storage-SQLite3%20%7C%20MongoDB%20Atlas-green)
 ![Testing](https://img.shields.io/badge/testing-pytest-orange)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
+
 A modular, terminal-based **Static Application Security Testing (SAST)** engine engineered in Python. Designed as the **Phase 1 Code-Level Detection Engine** of an end-to-end DevSecOps framework, it performs regex-based vulnerability pattern matching, maintains local edge audit trails, and synchronizes global security telemetry to cloud storage.
 
 ---
