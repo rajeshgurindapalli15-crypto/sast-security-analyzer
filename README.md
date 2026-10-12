@@ -1,9 +1,9 @@
 # SAST Security Analyzer: Edge-Optimized Static Code Assessment Engine
 
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![Storage](https://img.shields.io/badge/storage-SQLite3%20%7C%20MongoDB%20Atlas-green)
-![Testing](https://img.shields.io/badge/testing-pytest-orange)
-![License](https://img.shields.io/badge/license-MIT-yellow)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square)](https://www.python.org/)
+[![Storage](https://img.shields.io/badge/storage-SQLite3%20%7C%20MongoDB%20Atlas-green?style=flat-square)](https://www.mongodb.com/)
+[![Testing](https://img.shields.io/badge/testing-pytest-orange?style=flat-square)](https://docs.pytest.org/)
+[![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](LICENSE)
 
 A modular, terminal-based **Static Application Security Testing (SAST)** engine engineered in Python. Designed as the **Phase 1 Code-Level Detection Engine** of an end-to-end DevSecOps framework, it performs regex-based vulnerability pattern matching, maintains local edge audit trails, and synchronizes global security telemetry to cloud storage.
 
