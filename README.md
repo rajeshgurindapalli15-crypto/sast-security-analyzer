@@ -1,4 +1,4 @@
-#🔍 SAST Security Analyzer: Edge-Optimized Static Code Assessment Engine
+# 🔍SAST Security Analyzer: Edge-Optimized Static Code Assessment Engine
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square)](https://www.python.org/)
 [![Storage](https://img.shields.io/badge/storage-SQLite3%20%7C%20MongoDB%20Atlas-green?style=flat-square)](https://www.mongodb.com/)
