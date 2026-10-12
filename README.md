@@ -50,6 +50,13 @@ python -m venv venv
 venv\Scripts\activate  
 pip install -r requirements.txt
 ```
+
+## 🧪Test Harness Execution & Engine Verification
+
+To maintain code reliability and validate matching criteria across regex rule sets, an automated test suite is integrated. Below is the console output confirming successful test execution via `pytest`:
+
+![Pytest Execution Verification - test_engine.py](assets/pytest_validation.png)
+
 ## 💻Diagnostic CLI Execution & Data Presentation
 
 To execute a static code analysis and render intercepted vulnerability vectors in real time, the scanning utility is invoked via the terminal. Below is the active CLI execution and structured table representation rendered via `rich`:
@@ -62,11 +69,7 @@ Upon completing the analysis, the engine automatically compiles and exports a st
 
 ![Markdown Report Structure - scan_report.md](assets/compliance_report.png)
 
-## 🧪Test Harness Execution & Engine Verification
 
-To maintain code reliability and validate matching criteria across regex rule sets, an automated test suite is integrated. Below is the console output confirming successful test execution via `pytest`:
-
-![Pytest Execution Verification - test_engine.py](assets/pytest_validation.png)
 
 ## 📊Historical Scan Logging & Audit Trail
 
