@@ -1,16 +1,34 @@
 # SAST Security Analyzer: Edge-Optimized Static Code Assessment Engine
 
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Storage](https://img.shields.io/badge/storage-SQLite3%20%7C%20MongoDB%20Atlas-green.svg)](https://www.mongodb.com/)
-[![Testing](https://img.shields.io/badge/testing-pytest-orange.svg)](https://docs.pytest.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square)](https://www.python.org/)
+[![Storage](https://img.shields.io/badge/storage-SQLite3%20%7C%20MongoDB%20Atlas-green?style=flat-square)](https://www.mongodb.com/)
+[![Testing](https://img.shields.io/badge/testing-pytest-orange?style=flat-square)](https://docs.pytest.org/)
+[![License](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](LICENSE)
 
 A modular, terminal-based **Static Application Security Testing (SAST)** engine engineered in Python. Designed as the **Phase 1 Code-Level Detection Engine** of an end-to-end DevSecOps framework, it performs regex-based vulnerability pattern matching, maintains local edge audit trails, and synchronizes global security telemetry to cloud storage.
 
 ---
 
-## 🏗️ Architectural Role in the Secure SDLC
+## 🏗️ Architecture & Data-Flow Mind Map
+The pipeline executes a local static code scan to parse vulnerability vectors through custom regex rules. Detected findings are simultaneously committed to a local SQLite database for instant developer feedback and asynchronously synchronized to MongoDB Atlas for centralized cloud threat telemetry.
+```mermaid
+graph TD
+    A[Developer Local Workspace] -->|Runs CLI Scan| B(SAST Security Engine)
+    B -->|Regex Pattern Matching| C{Vulnerability Found?}
+    
+    C -->|Yes| D[Extract Severity, Line & Snippet]
+    C -->|No| E[Clean Scan Log]
+    
+    D --> F[(Local SQLite3 DB)]
+    D --> G[(MongoDB Atlas Cloud)]
+    
+    F --> H[Terminal Rich UI & Markdown Reports]
+    G --> I[Global Threat Telemetry & Audits]
 
+    style B fill:#2b3137,stroke:#fff,stroke-width:2px,color:#fff
+    style F fill:#0366d6,stroke:#fff,stroke-width:2px,color:#fff
+    style G fill:#2ea44f,stroke:#fff,stroke-width:2px,color:#fff
+```
 ## Core Technical Features
 
 * **Regex Pattern Matching Engine**: Scans source code repositories for high-severity vulnerability vectors, including Hardcoded Secrets, Command Injection, SQL Injection, and Insecure Deserialization.
