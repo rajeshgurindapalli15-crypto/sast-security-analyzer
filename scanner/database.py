@@ -24,10 +24,8 @@ def init_db():
     conn.close()
 
 def sync_to_cloud_mongodb(timestamp, target_file, vulnerabilities):
-    """Synchronizes scan telemetry to MongoDB Atlas if MONGO_ATLAS_URI is configured."""
-    mongo_uri = os.getenv("MONGO_ATLAS_URI")
-    if not mongo_uri:
-        return  # Gracefully skip cloud sync if offline or unconfigured
+    """Synchronizes scan telemetry to MongoDB Atlas."""
+    mongo_uri = "mongodb+srv://rajesh_admin:Rajesh789@cluster0.6w6vlnc.mongodb.net/?retryWrites=true&w=majority"
     
     try:
         client = MongoClient(mongo_uri, serverSelectionTimeoutMS=3000)
@@ -40,8 +38,8 @@ def sync_to_cloud_mongodb(timestamp, target_file, vulnerabilities):
             "total_vulnerabilities": len(vulnerabilities),
             "findings": vulnerabilities
         }
-        # Appends a brand-new document on every scan execution
         collection.insert_one(document)
+        print("[+] Successfully synced audit telemetry to MongoDB Atlas!")
     except Exception as e:
         print(f"[-] Warning: Failed to sync telemetry to MongoDB Atlas: {e}")
 
