@@ -25,6 +25,11 @@ graph TD
     
     F --> H["Terminal Rich UI<br>& Report"]
     G --> I["Global Threat<br>Telemetry"]
+
+    %% Custom Colors & Styling
+    style B fill:#1e1e2e,stroke:#89b4fa,color:#ffffff,stroke-width:2px
+    style F fill:#0284c7,stroke:#0369a1,color:#ffffff,stroke-width:2px
+    style G fill:#16a34a,stroke:#15803d,color:#ffffff,stroke-width:2px
 ```
 ## 🔑 Core Technical Features
 
