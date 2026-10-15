@@ -11,21 +11,20 @@ A modular, terminal-based **Static Application Security Testing (SAST)** engine 
 
 ## 🏗️ Architecture & Data-Flow Mind Map
 The pipeline executes a local static code scan to parse vulnerability vectors through custom regex rules. Detected findings are simultaneously committed to a local SQLite database for instant developer feedback and asynchronously synchronized to MongoDB Atlas for centralized cloud threat telemetry.
+
 ```mermaid
-
 graph TD
-    A[Developer Local Workspace] -->|Runs CLI Scan| B(SAST Security Engine)
-    B -->|Regex Pattern Matching| C{Vulnerability Found?}
+    A["Developer Local Workspace"] -->|Runs CLI Scan| B["SAST Security Engine"]
+    B -->|Regex Pattern Matching| C{"Vulnerability Found?"}
     
-    C -->|Yes| D[Extract Severity, Line & Snippet]
-    C -->|No| E[Clean Scan Log]
+    C -->|Yes| D["Extract Severity & Metadata"]
+    C -->|No| E["Record Clean Scan Log"]
     
-    D --> F[(Local SQLite3 DB)]
-    D --> G[(MongoDB Atlas Cloud)]
+    D --> F[("Local SQLite3 DB")]
+    D --> G[("MongoDB Atlas Cloud")]
     
-    F --> H["Terminal&nbsp;Rich&nbsp;UI&nbsp;&<br/>Markdown&nbsp;Reports"]
-    G --> I["Global&nbsp;Threat&nbsp;Telemetry&nbsp;&<br/>Audits"]
-
+    F --> H["Terminal Rich UI & Markdown Report"]
+    G --> I["Global Threat Telemetry Audits"]
     style B fill:#2b3137,stroke:#fff,stroke-width:2px,color:#fff
     style F fill:#0366d6,stroke:#fff,stroke-width:2px,color:#fff
     style G fill:#2ea44f,stroke:#fff,stroke-width:2px,color:#fff
