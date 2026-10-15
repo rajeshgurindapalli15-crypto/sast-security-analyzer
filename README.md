@@ -89,16 +89,23 @@ When the SAST Security Analyzer executes a scan against target source code, it p
 5. **Automated Reporting & Test Validation (`tests/`)**
    * Exports structured Markdown compliance reports into the `assets/` or `reports/` directory while `pytest` validates detection rules against vulnerable test benches (`tests/sample_vulnerable.py`).
 
-## ⚙️Installation & Setup
+## ⚙️ Installation & Setup
 
 ```bash
+# Clone the repository
 git clone [https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git](https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git)
 cd sast-security-analyzer
-python -m venv venv
-venv\Scripts\activate  
-pip install -r requirements.txt
-```
 
+# Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the SAST scanner on a test file
+python scanner/cli.py --target ./tests/sample_vulnerable.py
+```
 ## 🧪Test Harness Execution & Engine Verification
 
 To maintain code reliability and validate matching criteria across regex rule sets, an automated test suite is integrated. Below is the console output confirming successful test execution via `pytest`:
