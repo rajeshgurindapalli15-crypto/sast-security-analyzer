@@ -22,10 +22,6 @@ graph TD
     D --> G[("MongoDB Atlas Cloud DB")]
     F --> H["Terminal Rich UI & Markdown Report"]
     G --> I["Global Threat Telemetry & Audits"]
-    style B fill:#2b3137,stroke:#fff,stroke-width:2px,color:#fff
-    style F fill:#0366d6,stroke:#fff,stroke-width:2px,color:#fff
-    style G fill:#2ea44f,stroke:#fff,stroke-width:2px,color:#fff
-
 ```
 ## 🔑 Core Technical Features
 
