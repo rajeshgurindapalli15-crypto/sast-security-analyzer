@@ -70,7 +70,7 @@ graph TD
 └── sast_results.db
 ```
 
-## ⚙️ Engine Execution & Analysis Workflow
+## 🧠 Engine Execution & Analysis Workflow
 
 When the SAST Security Analyzer executes a scan against target source code, it processes information through the following multi-stage pipeline:
 
