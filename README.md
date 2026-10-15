@@ -92,7 +92,8 @@ When the SAST Security Analyzer executes a scan against target source code, it p
 ## ⚙️ Installation & Setup
 
 ```bash
-git clone https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.gitcd sast-security-analyzer
+git clone https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git
+cd sast-security-analyzer
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
