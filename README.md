@@ -43,6 +43,31 @@ graph TD
 
 ---
 
+```text
+├── assets/
+│   ├── cil_output.png
+│   ├── compliance_report.png
+│   ├── mongodb_audit_telemetry.png
+│   ├── pytest_validation.png
+│   ├── sast_scan_history.png
+│   └── sqlite_scan_results.png
+├── scanner/
+│   ├── __init__.py
+│   ├── cli.py
+│   ├── database.py
+│   ├── engine.py
+│   └── rules.json
+├── tests/
+│   ├── sample_vulnerable.py
+│   └── test_engine.py
+├── .env.example
+├── .gitignore
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── sast_results.db
+```
 ## ⚙️Installation & Setup
 
 ```bash
