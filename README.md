@@ -14,17 +14,14 @@ The pipeline executes a local static code scan to parse vulnerability vectors th
 
 ```mermaid
 graph TD
-    A["Developer Local Workspace"] -->|Runs CLI Scan| B["SAST Security Engine"]
-    B -->|Regex Pattern Matching| C{"Vulnerability Found?"}
-    
+    A["Developer Local Workspace"] --> B["SAST Security Engine"]
+    B --> C{"Vulnerability Found?"}
     C -->|Yes| D["Extract Severity & Metadata"]
     C -->|No| E["Record Clean Scan Log"]
-    
     D --> F[("Local SQLite3 DB")]
-    D --> G[("MongoDB Atlas Cloud")]
-    
+    D --> G[("MongoDB Atlas Cloud DB")]
     F --> H["Terminal Rich UI & Markdown Report"]
-    G --> I["Global Threat Telemetry Audits"]
+    G --> I["Global Threat Telemetry & Audits"]
     style B fill:#2b3137,stroke:#fff,stroke-width:2px,color:#fff
     style F fill:#0366d6,stroke:#fff,stroke-width:2px,color:#fff
     style G fill:#2ea44f,stroke:#fff,stroke-width:2px,color:#fff
