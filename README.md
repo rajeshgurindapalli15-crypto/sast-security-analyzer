@@ -71,26 +71,23 @@ graph TD
 ```
 
 ## ⚙️ Engine Execution & Analysis Workflow
+
 When the SAST Security Analyzer executes a scan against target source code, it processes information through the following multi-stage pipeline:
-1. CLI Initialization & Parameter Parsing (scanner/cli.py)
 
-Accepts target directories, file arguments, and configuration flags using click and renders progress telemetry through rich.
+1. **CLI Initialization & Parameter Parsing (`scanner/cli.py`)**
+   * Accepts target directories, file arguments, and configuration flags using `click` and renders progress telemetry through `rich`.
 
-2. Regex & Pattern Matching Engine (scanner/engine.py & scanner/rules.json)
+2. **Regex & Pattern Matching Engine (`scanner/engine.py` & `scanner/rules.json`)**
+   * Scans source files against security signatures to detect hardcoded secrets, SQL injection vectors, command injection, and insecure deserialization anti-patterns.
 
-Scans source files against security signatures to detect hardcoded secrets, SQL injection vectors, command injection, and insecure deserialization anti-patterns.
+3. **Vulnerability Evaluation & Severity Extraction**
+   * Analyzes matched hits to determine risk ratings (High, Medium, Low). If vulnerabilities are found, telemetry extracts metadata; otherwise, a clean scan log is recorded.
 
-3. Vulnerability Evaluation & Severity Extraction
+4. **Dual-Storage Telemetry & Persistence (`scanner/database.py`)**
+   * Automatically records local scan audit logs into SQLite3 (`sast_results.db`) for rapid local developer feedback while concurrently syncing threat metadata to MongoDB Atlas.
 
-Analyzes matched hits to determine risk ratings (High, Medium, Low). If vulnerabilities are found, telemetry extracts metadata; otherwise, a clean scan log is recorded.
-
-4. Dual-Storage Telemetry & Persistence (scanner/database.py)
-
-Automatically records local scan audit logs into SQLite3 (sast_results.db) for rapid local developer feedback while concurrently syncing threat metadata to MongoDB Atlas.
-
-5.Automated Reporting & Test Validation (tests/)
-
-Exports structured Markdown compliance reports into the assets/ or reports/ directory while pytest validates detection rules against vulnerable test benches (tests/sample_vulnerable.py).
+5. **Automated Reporting & Test Validation (`tests/`)**
+   * Exports structured Markdown compliance reports into the `assets/` or `reports/` directory while `pytest` validates detection rules against vulnerable test benches (`tests/sample_vulnerable.py`).
 
 ## ⚙️Installation & Setup
 
