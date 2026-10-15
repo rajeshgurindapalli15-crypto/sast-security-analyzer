@@ -92,18 +92,14 @@ When the SAST Security Analyzer executes a scan against target source code, it p
 ## ⚙️ Installation & Setup
 
 ```bash
-# Clone the repository
 git clone [https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git](https://github.com/rajeshgurindapalli15-crypto/sast-security-analyzer.git)
 cd sast-security-analyzer
 
-# Create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate
 
-# Install dependencies
 pip install -r requirements.txt
 
-# Run the SAST scanner on a test file
 python scanner/cli.py --target ./tests/sample_vulnerable.py
 ```
 ## 🧪Test Harness Execution & Engine Verification
