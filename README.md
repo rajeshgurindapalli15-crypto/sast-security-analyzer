@@ -43,6 +43,7 @@ graph TD
 
 ---
 
+ ## 📁 Project Directory Layout
 ```text
 ├── assets/
 │   ├── cil_output.png
