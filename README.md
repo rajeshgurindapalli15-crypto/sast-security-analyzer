@@ -66,8 +66,7 @@ graph TD
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
-├── requirements.txt
-└── sast_results.db
+└── requirements.txt
 ```
 
 ## 🧠 Engine Execution & Analysis Workflow
